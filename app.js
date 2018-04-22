@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const bodyParser = require('body-parser');
-const artist = require('./controllers/Artist');
+const ArtistController = require('./controllers/Artist');
 
 // mLab connection string
 require('dotenv').config({
@@ -19,6 +19,12 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => res.send('Hello MongoDb!'));
 
 // POST route
-app.post('/Artist', artist.post);
+app.post('/Artist', ArtistController.post);
+
+// GET route, lists all artists in collection
+app.get('/Artist', ArtistController.list);
+
+// GET route, returns specific artist
+app.get('/Artist/:artistId', ArtistController.get);
 
 app.listen(3000, () => console.log('It works!'));
