@@ -27,4 +27,7 @@ app.get('/Artist', ArtistController.list);
 // GET route, returns specific artist
 app.get('/Artist/:artistId', ArtistController.get);
 
+// PUT route, updates an artist
+app.put('/Artist/:artistId', ArtistController.put);
+
 app.listen(3000, () => console.log('It works!'));
