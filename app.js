@@ -30,4 +30,7 @@ app.get('/Artist/:artistId', ArtistController.get);
 // PUT route, updates an artist
 app.put('/Artist/:artistId', ArtistController.put);
 
+// DELETE route, delete artist
+app.delete('/Artist/:artistId', ArtistController.deleteArtist);
+
 app.listen(3000, () => console.log('It works!'));
