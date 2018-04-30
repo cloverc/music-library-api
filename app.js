@@ -21,6 +21,7 @@ app.get('/', (req, res) => res.send('Hello MongoDb!'));
 app.post('/Artist', ArtistController.post);
 app.get('/Artist', ArtistController.list);
 app.get('/Artist/:artistId', ArtistController.get);
+app.get('/Artist/:artistId/albums', AlbumController.getAlbums);
 app.put('/Artist/:artistId', ArtistController.put);
 app.delete('/Artist/:artistId', ArtistController.deleteArtist);
 app.post('/Artist/:artistId/albums', AlbumController.postAlbum);
